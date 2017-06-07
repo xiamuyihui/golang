@@ -1,0 +1,70 @@
+server:
+  port: ${test.server.port:7819}
+
+spring:
+  application:
+    name: ${test.spring.application.name:provider-rabbitmq}
+  rabbitmq:
+    host: ${test.rabbitmq.host:192.168.1.111}
+    port: ${test.rabbitmq.port:5672}
+    username: ${test.rabbitmq.username:admin}
+    password: ${test.rabbitmq.password:Jxkj2016}
+    listener:
+      default-requeue-rejected: ${test.rabbitmq.listener.default-requeue-rejected:false}
+      max-concurrency: ${test.rabbitmq.listener.max-concurrency:10}
+      concurrency: ${test.rabbitmq.listener.concurrency:2}
+
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    #${test.spring.datasource.url}
+#    url: jdbc:mysql://192.168.1.191:3306/zmshop?characterEncoding=UTF-8
+    url: ${test.spring.datasource.url:jdbc:mysql://192.168.1.191:3306/zmshop?characterEncoding=UTF-8}
+    #
+    username: ${test.spring.datasource.username:root}
+#    username: ${test.spring.datasource.username}
+    #${test.spring.datasource.password}
+    password: ${test.spring.datasource.password:root}
+    driver-class-name: com.mysql.jdbc.Driver
+    hikari:
+      connection-test-query: ${test.spring.datasource.hikari.connection-test-query:select 1 from dual}
+      #${test.spring.datasource.hikari.connection-timeout:30000}
+      connection-timeout: ${test.spring.datasource.hikari.connection-timeout:30000}
+#      connection-timeout: ${test.spring.datasource.hikari.connection-timeout}
+      #${test.spring.datasource.hikari.idle-timeout}
+      idle-timeout: ${test.spring.datasource.hikari.idle-timeout:60000}
+      max-lifetime: ${test.spring.datasource.hikari.max-lifetime:1800000}
+      maximum-pool-size: ${test.spring.datasource.hikari.maximum-pool-size:10}
+      minimum-idle: ${test.spring.datasource.hikari.minimum-idle:10}
+  data:
+    elasticsearch:
+      cluster-nodes: ${test.elasticsearch.cluster.nodes:192.168.1.237:9300}
+      properties:
+        path.home: target/elastic
+
+redis:
+     database: ${dev.spring.redis.database:1}
+     host: ${dev.spring.redis.host:192.168.1.225}
+     port: ${dev.spring.redis.port:6379}
+     password: ${dev.spring.redis.password:myredis}
+     timeout: ${dev.spring.redis.timeout:0}
+     pool:
+         max-active: ${dev.spring.redis.pool.max-active:20}
+         min-idle: ${dev.spring.redis.pool.min-idle:5}
+         max-idle: ${dev.spring.redis.pool.max-idle:10}
+         max-wait: ${dev.spring.redis.pool.max-wait:-1}
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${test.eureka.client.serviceUrl.defaultZone:http://192.168.1.225:10000/eureka/}
+#      defaultZone: http://192.168.1.225:10000/eureka/
+  instance:
+    lease-renewal-interval-in-seconds: ${test.lease-renewal-interval-in-seconds:2}
+    lease-expiration-duration-in-seconds: ${test.lease-expiration-duration-in-seconds:2}
+
+#hystrix:
+#    command.default.execution.isolation.thread.timeoutInMilliseconds: 5000
+
+logging:
+  level:
+    com.kingthy.service.impl: ${test.com.kingthy.service.impl:debug}
