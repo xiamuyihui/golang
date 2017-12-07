@@ -1,0 +1,4 @@
+
+websocket:
+   remote-address: ws://localhost:9090/websocket
+

@@ -1,0 +1,56 @@
+server.port:   ${test.server.port:7977}
+#server:
+#  ssl:
+#    key-store: classpath:keystore.p12
+#    key-store-password: 123456
+#    keyStoreType: PKCS12
+#    keyAlias: tomcat
+spring:
+
+  application:
+    name: ${test.spring.application.name:provider-model-dubbo}
+
+  http:
+    multipart:
+      max-file-size: 50Mb
+      max-request-size: 50Mb
+
+  redis:
+         database: ${test.spring.redis.database:1}
+         host: ${test.spring.redis.host:192.168.1.225}
+         port: ${test.spring.redis.port:6379}
+         password: ${test.spring.redis.password:myredis}
+         timeout: ${test.spring.redis.timeout:0}
+         pool:
+             max-active: ${test.spring.redis.pool.max-active:20}
+             min-idle: ${test.spring.redis.pool.min-idle:5}
+             max-idle: ${test.spring.redis.pool.max-idle:10}
+             max-wait: ${test.spring.redis.pool.max-wait:-1}
+  rabbitmq:
+    host: ${test.rabbitmq.host:192.168.1.148}
+    port: ${test.rabbitmq.port:5672}
+    username: ${test.rabbitmq.username:admin}
+    password: ${test.rabbitmq.password:Jxkj2016}
+  dubbo:
+    application.name: model-facade-consumer
+    registry.address: ${test.dubbo.address:zookeeper://192.168.7.185:2181}
+    protocol.name: dubbo
+    protocol.port: ${test.dubbo.protocol.port:20812}
+    scan: com.kingthy.service.impl
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${test.eureka.client.serviceUrl.defaultZone:http://slave1:10000/eureka/,http://slave2:10000/eureka/,http://slave3:10000/eureka/}
+  instance:
+    #心跳时间，服务续约间隔时间 （默认30秒）
+    lease-renewal-interval-in-seconds: 2
+    #发呆时间，服务续约到期时间（缺省90秒）
+    lease-expiration-duration-in-seconds: 2
+    prefer-ip-address: true
+#缓存超时设置(分钟)
+cache:
+  nullValueExpire: 8
+logging:
+  level:
+    com.kingthy.service.impl: DEBUG      
+     

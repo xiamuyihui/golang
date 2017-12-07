@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    config:
+      name: favorite-dubbo
+#      profile: dev
+#      label: branches
+      uri: http://conf.api.com:8000
+  profiles:
+    active: dev

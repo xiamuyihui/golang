@@ -1,0 +1,15 @@
+server:
+  port: 8000
+spring: 
+  profiles:
+    active: subversion
+  cloud:
+    config:
+      server:
+        svn:
+          uri: http://192.168.1.116:88/svn/kapok/development/cld/src/config
+          username: yongpan
+          password: py765765
+          default-label: api-conf
+          search-paths: api-conf
+      enabled: true

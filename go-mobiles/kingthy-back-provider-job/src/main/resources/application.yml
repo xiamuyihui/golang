@@ -1,0 +1,47 @@
+server:
+  port: ${dev.server.port:7859}
+
+regCenter:
+#  serverList: localhost:2181
+  serverList: 192.168.7.185:2181
+  namespace: job-lite
+
+orderEventJob:
+  cron: 0/30 * * * * ?
+  shardingTotalCount: 5
+  shardingItemParameters: 0=A,1=B,2=C,3=D,4=E
+
+cartEventJob:
+  cron: 0/30 * * * * ?
+  shardingTotalCount: 5
+  shardingItemParameters: 0=A,1=B,2=C,3=D,4=E
+
+url:
+  syncUrl: ${dev.syncUrl:http://pms.jxkj.com/jxpms-web/baseMaterialInfo/getMaterialInfoByCode}
+
+spring:
+  application:
+    name: ${dev.spring.application.name:provider-job-dubbo}
+
+  dubbo:
+    application.name: job-facade-consumer
+    registry.address: ${dev.dubbo.address:zookeeper://192.168.7.185:2181}
+    protocol.name: dubbo
+    protocol.port: ${dev.dubbo.protocol.port:20995}
+    scan: com.kingthy.job
+
+  redis:
+    database: ${dev.spring.redis.database:0}
+    host: ${dev.spring.redis.host:192.168.1.225}
+    port: ${dev.spring.redis.port:6379}
+    password: ${dev.spring.redis.password:myredis}
+    timeout: ${dev.spring.redis.timeout:0}
+    pool:
+      max-active: ${dev.spring.redis.pool.max-active:20}
+      min-idle: ${dev.spring.redis.pool.min-idle:5}
+      max-idle: ${dev.spring.redis.pool.max-idle:10}
+      max-wait: ${dev.spring.redis.pool.max-wait:-1}
+
+logging:
+  level:
+    com.kingthy.service.impl: ${dev.com.kingthy.service.impl:info}

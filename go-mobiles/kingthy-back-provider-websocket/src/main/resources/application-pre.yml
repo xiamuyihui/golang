@@ -1,0 +1,34 @@
+server:
+  port: ${pre.server.port:8123}
+
+spring:
+
+  application:
+    name: ${pre.spring.application.name:provider-websocket}
+
+  redis: 
+     database: ${pre.spring.redis.database:1}
+     host: ${pre.spring.redis.host:192.168.1.225}
+     port: ${pre.spring.redis.port:6379}
+     password: ${pre.spring.redis.password:myredis}
+     timeout: ${pre.spring.redis.timeout:0}
+     pool:
+         max-active: ${pre.spring.redis.pool.max-active:20}
+         min-idle: ${pre.spring.redis.pool.min-idle:5}
+         max-idle: ${pre.spring.redis.pool.max-idle:10}
+         max-wait: ${pre.spring.redis.pool.max-wait:-1}
+
+eureka:
+  client:
+    serviceUrl:
+       defaultZone: ${pre.eureka.client.serviceUrl.defaultZone:http://192.168.1.225:10000/eureka/}
+  instance:
+    #心跳时间，服务续约间隔时间 （默认30秒）
+    lease-renewal-interval-in-seconds: 2
+    #发呆时间，服务续约到期时间（缺省90秒）
+    lease-expiration-duration-in-seconds: 2
+    prefer-ip-address: true
+
+logging:
+  level:
+    com.kingthy.service.impl: DEBUG

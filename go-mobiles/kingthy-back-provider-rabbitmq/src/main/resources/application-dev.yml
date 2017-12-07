@@ -1,0 +1,67 @@
+server:
+  port: ${dev.server.port:7819}
+
+spring:
+  application:
+    name: ${dev.spring.application.name:provider-rabbitmq-dubbo}
+  rabbitmq:
+    host: ${dev.rabbitmq.host:localhost}
+    port: ${dev.rabbitmq.port:5672}
+    username: ${dev.rabbitmq.username:guest}
+    password: ${dev.rabbitmq.password:guest}
+    listener:
+      default-requeue-rejected: ${dev.rabbitmq.listener.default-requeue-rejected:false}
+      max-concurrency: ${dev.rabbitmq.listener.max-concurrency:10}
+      concurrency: ${dev.rabbitmq.listener.concurrency:2}
+
+  data:
+    elasticsearch:
+#        properties:
+#          logs: E:\144\elasticsearch-5.4.0\logs
+#          path: E:\144\elasticsearch-5.4.0\data
+#            path.home: target/elastic
+#          index.search.slowlog.threshold.query.info: 1ms
+      cluster-nodes: 192.168.1.237:9300
+#        cluster-nodes: localhost:9300
+
+
+  redis:
+   database: ${dev.spring.redis.database:1}
+#   host: ${dev.spring.redis.host:192.168.1.225}
+   host: 127.0.0.1
+   port: ${dev.spring.redis.port:6379}
+   password:
+   timeout: ${dev.spring.redis.timeout:0}
+   pool:
+       max-active: ${dev.spring.redis.pool.max-active:20}
+       min-idle: ${dev.spring.redis.pool.min-idle:5}
+       max-idle: ${dev.spring.redis.pool.max-idle:10}
+       max-wait: ${dev.spring.redis.pool.max-wait:-1}
+  dubbo:
+    application.name: rabbitmq-facade-consumer
+#    registry.address: ${dev.dubbo.address:zookeeper://192.168.7.185:2181}
+    registry.address: zookeeper://localhost:2181
+    protocol.name: dubbo
+    protocol.port: ${dev.dubbo.protocol.port:20900}
+    scan: com.kingthy.service.impl,com.kingthy.service.test
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${dev.eureka.client.serviceUrl.defaultZone:http://localhost:10000/eureka/}
+#      defaultZone: http://192.168.1.225:10000/eureka/
+  instance:
+    lease-renewal-interval-in-seconds: ${dev.lease-renewal-interval-in-seconds:2}
+    lease-expiration-duration-in-seconds: ${dev.lease-expiration-duration-in-seconds:2}
+    prefer-ip-address: true
+
+#hystrix:
+#    command.default.execution.isolation.thread.timeoutInMilliseconds: 5000
+
+logging:
+  level:
+    com.kingthy.service.impl: ${dev.com.kingthy.service.impl:debug}
+
+#缓存超时设置(分钟)
+cache:
+   nullValueExpire: 8

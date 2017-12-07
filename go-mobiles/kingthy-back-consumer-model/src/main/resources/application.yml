@@ -1,0 +1,11 @@
+server:
+  port: 17997
+spring:
+  application:
+    name: consumer-model-dubbo
+  client:
+    serviceUrl:
+      ##defaultZone: http://192.168.1.225:10000/eureka/
+      defaultZone: http://localhost:10000/eureka/
+  instance:
+    prefer-ip-address: true

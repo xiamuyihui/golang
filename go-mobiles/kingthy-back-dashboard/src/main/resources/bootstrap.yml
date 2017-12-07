@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    config:
+      name: monitor
+      profile: dev
+      label: branches
+      uri: http://localhost:8000
+  profiles:
+    active: dev

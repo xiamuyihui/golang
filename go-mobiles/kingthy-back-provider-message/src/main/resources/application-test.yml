@@ -1,0 +1,38 @@
+server.port:  ${test.server.port:9321}
+spring:
+  application:
+    name: ${test.spring.application.name:provider-message-dubbo}
+  rabbitmq:
+      host: ${test.rabbitmq.host:192.168.1.148}
+      port: ${test.rabbitmq.port:5672}
+      username: ${test.rabbitmq.username:admin}
+      password: ${test.rabbitmq.password:Jxkj2016}
+      listener:
+        retry:
+          max-attempts: 3
+          initial-interval: 30000
+          max-interval: 150000
+          enabled: true
+          multiplier: 2.5
+  #        defaultRequeueRejected: false
+#      dubbo配置
+  dubbo:
+    application.name: message-facade-consumer
+    registry.address: ${test.dubbo.address:zookeeper://192.168.7.185:2181}
+    protocol.name: dubbo
+    protocol.port: ${test.dubbo.protocol.port:20896}
+    scan: com.kingthy.service.impl
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${test.eureka.client.serviceUrl.defaultZone:http://192.168.1.225:10000/eureka/}
+  instance:
+    #心跳时间，服务续约间隔时间 （默认30秒）
+    lease-renewal-interval-in-seconds: 2
+    #发呆时间，服务续约到期时间（缺省90秒）
+    lease-expiration-duration-in-seconds: 2
+    prefer-ip-address: true
+logging:
+  level:
+    com.kingthy.service.impl: DEBUG
+     

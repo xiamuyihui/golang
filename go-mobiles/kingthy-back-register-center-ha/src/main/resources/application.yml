@@ -1,0 +1,17 @@
+spring:
+  profiles: eureka2
+  application:
+    name: eureka-ha
+server:
+  port: 10001
+eureka:
+  instance:
+    hostname: eureka2
+  client:
+    serviceUrl:
+      defaultZone: http://eureka1:10000/eureka/
+  server:
+    #关闭自我保护
+    enable-self-preservation: false
+    #清理无效服务的间隔时间（缺省60*1000毫秒）
+    eviction-interval-timer-in-ms: 20

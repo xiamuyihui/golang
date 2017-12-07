@@ -1,0 +1,69 @@
+server:
+  port: ${production.server.port:7858}
+
+regCenter:
+#  serverList: localhost:2181
+#  serverList: 192.168.6.140:2181
+  serverList: 192.168.7.185:2181
+  namespace: job-lite-docking
+
+colourIfiJob:
+  cron: 0/30 * * * * ?
+  shardingTotalCount: 3
+  shardingItemParameters: 0=0,1=4,2=8
+
+styleTypeIfiJob:
+  cron: 0/30 * * * * ?
+  shardingTotalCount: 3
+  shardingItemParameters: 0=0,1=4,2=8
+
+componentTypeIfiJob:
+  cron: 0/30 * * * * ?
+  shardingTotalCount: 3
+  shardingItemParameters: 0=0,1=4,2=8
+
+partsTypeIfiJob:
+  cron: 0/30 * * * * ?
+  shardingTotalCount: 3
+  shardingItemParameters: 0=0,1=4,2=8
+
+ifiMaterialTypeJob:
+  cron: 0/30 * * * * ?
+  shardingTotalCount: 3
+  shardingItemParameters: 0=0,1=4,2=8
+
+ifiMeasureUnitJob:
+  cron: 0/30 * * * * ?
+  shardingTotalCount: 3
+  shardingItemParameters: 0=0,1=4,2=8
+
+spring:
+  application:
+    name: ${production.spring.application.name:provider-docking-dubbo}
+  dubbo:
+    application.name: docking-job-facade-consumer
+    registry.address: ${production.dubbo.address:zookeeper://192.168.7.185:2181}
+    protocol.name: dubbo
+    protocol.port: ${production.dubbo.protocol.port:20995}
+    scan: com.kingthy.service.impl,com.kingthy.job
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${production.eureka.client.serviceUrl.defaultZone:http://slave1:10000/eureka/,http://slave2:10000/eureka/,http://slave3:10000/eureka/}
+  instance:
+    #心跳时间，服务续约间隔时间 （默认30秒）
+    lease-renewal-interval-in-seconds: 2
+    #发呆时间，服务续约到期时间（缺省90秒）
+    lease-expiration-duration-in-seconds: 2
+    prefer-ip-address: true
+  instance:
+    #心跳时间，服务续约间隔时间 （默认30秒）
+    lease-renewal-interval-in-seconds: 2
+    #发呆时间，服务续约到期时间（缺省90秒）
+    lease-expiration-duration-in-seconds: 2
+    prefer-ip-address: true
+
+logging:
+  level:
+    com.kingthy.service.impl: ${production.com.kingthy.service.impl:info}

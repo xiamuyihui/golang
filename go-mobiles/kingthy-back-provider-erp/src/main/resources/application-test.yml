@@ -1,0 +1,50 @@
+server.port:  ${test.server.port:7921}
+spring:
+  application:
+    name: ${test.spring.application.name:provider-erp}
+  redis:
+      database: ${test.spring.redis.database:0}
+      host: ${test.spring.redis.host:192.168.1.225}
+      port: ${test.spring.redis.port:6379}
+      password: ${test.spring.redis.password:myredis}
+      timeout: ${test.spring.redis.timeout:0}
+      pool:
+        max-active: ${test.spring.redis.pool.max-active:20}
+        min-idle: ${test.spring.redis.pool.min-idle:5}
+        max-idle: ${test.spring.redis.pool.max-idle:10}
+        max-wait: ${test.spring.redis.pool.max-wait:-1}
+
+eureka:
+  client:
+    serviceUrl: 
+      defaultZone: ${test.eureka.client.serviceUrl.defaultZone:http://192.168.1.225:10000/eureka/}
+  instance:
+    #心跳时间，服务续约间隔时间 （默认30秒）
+    lease-renewal-interval-in-seconds: 2
+    #发呆时间，服务续约到期时间（缺省90秒）
+    lease-expiration-duration-in-seconds: 2
+    prefer-ip-address: true
+logging:
+  level:
+    com.kingthy.service.impl: DEBUG
+    org.springframework.boot.env.PropertySourcesLoader: TRACE
+    org.springframework.cloud.config.server: DEBUG
+
+hystrix:
+  #超时阀值，默认1000毫秒#
+  command.default.execution.isolation.thread.timeoutInMilliseconds: 5000
+  #熔断后，相隔多长时间，发起重试，默认5000毫秒#
+  command.default.circuitBreaker.sleepWindowInMilliseconds: 5000
+  #当在配置时间窗口内达到此数量的失败后，进行短路。默认20个#
+  command.default.circuitBreaker.requestVolumeThreshold: 20
+  #出错百分比阈值，当达到此阈值后，开始短路。默认50%#
+  command.default.circuitBreaker.errorThresholdPercentage: 50
+
+
+#缓存超时设置(分钟)
+cache:
+   nullValueExpire: 8
+
+#接口地址
+address:
+  material: http://pms.jxkj.com/jxpms-web/baseMaterialInfo/getMaterialInfoByCode

@@ -1,0 +1,52 @@
+server.port:  ${production.server.port:8899}
+#server:
+#  ssl:
+#    key-store: classpath:keystore.p12
+#    key-store-password: 123456
+#    keyStoreType: PKCS12
+#    keyAlias: tomcat
+spring:
+  application:
+    name: ${production.spring.application.name:provider-opus-dubbo}
+  redis:
+             database: ${production.spring.redis.database:1}
+             host: ${production.spring.redis.host:192.168.1.225}
+             port: ${production.spring.redis.port:6379}
+             password: ${production.spring.redis.password:myredis}
+             timeout: ${production.spring.redis.timeout:0}
+             pool:
+                 max-active: ${production.spring.redis.pool.max-active:20}
+                 min-idle: ${production.spring.redis.pool.min-idle:5}
+                 max-idle: ${production.spring.redis.pool.max-idle:10}
+                 max-wait: ${production.spring.redis.pool.max-wait:-1}
+      rabbitmq:
+        host: ${production.rabbitmq.host:192.168.1.148}
+        port: ${production.rabbitmq.port:5672}
+        username: ${production.rabbitmq.username:admin}
+        password: ${production.rabbitmq.password:Jxkj2016}
+  dubbo:
+    application.name: opus-facade-consumer
+    registry.address: zookeeper://192.168.7.185:2181
+    scan: com.kingthy.service.impl
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${production.eureka.client.serviceUrl.defaultZone:http://192.168.1.225:10000/eureka/}
+  instance:
+    #心跳时间，服务续约间隔时间 （默认30秒）
+    lease-renewal-interval-in-seconds: 2
+    #发呆时间，服务续约到期时间（缺省90秒）
+    lease-expiration-duration-in-seconds: 2
+    prefer-ip-address: true
+logging:
+  level:
+    com.kingthy.service.impl: DEBUG
+hystrix:
+  #超时阀值，默认1000毫秒#
+  command.default.execution.isolation.thread.timeoutInMilliseconds: 5000
+  #熔断后，相隔多长时间，发起重试，默认5000毫秒#
+  command.default.circuitBreaker.sleepWindowInMilliseconds: 5000
+  #当在配置时间窗口内达到此数量的失败后，进行短路。默认20个#
+  command.default.circuitBreaker.requestVolumeThreshold: 20
+  #出错百分比阈值，当达到此阈值后，开始短路。默认50%#
+  command.default.circuitBreaker.errorThresholdPercentage: 50

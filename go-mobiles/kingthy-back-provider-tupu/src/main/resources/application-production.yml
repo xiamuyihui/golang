@@ -1,0 +1,23 @@
+server.port:  ${production.server.port:8699}
+#server:
+#  ssl:
+#    key-store: classpath:keystore.p12
+#    key-store-password: 123456
+#    keyStoreType: PKCS12
+#    keyAlias: tomcat
+spring:
+  application:
+    name: ${production.spring.application.name:provider-tupu-dubbo}
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${production.eureka.client.serviceUrl.defaultZone:http://192.168.1.225:10000/eureka/}
+  instance:
+    #心跳时间，服务续约间隔时间 （默认30秒）
+    lease-renewal-interval-in-seconds: 2
+    #发呆时间，服务续约到期时间（缺省90秒）
+    lease-expiration-duration-in-seconds: 2
+    prefer-ip-address: true
+logging:
+  level:
+    com.kingthy.service.impl: DEBUG      

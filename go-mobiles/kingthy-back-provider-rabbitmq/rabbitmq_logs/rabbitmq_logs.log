@@ -1,0 +1,9 @@
+2017-11-28 13:34:17.112 INFO [main]com.kingthy.service.test.EventProcessServiceTest.logStartupProfileInfo():665 -The following profiles are active: dev
+2017-11-28 13:34:42.411 INFO [main]com.kingthy.service.test.EventProcessServiceTest.logStarted():57 -Started EventProcessServiceTest in 30.08 seconds (JVM running for 31.843)
+2017-11-28 13:35:31.880 INFO [main]com.kingthy.service.test.EventProcessServiceTest.logStartupProfileInfo():665 -The following profiles are active: dev
+2017-11-28 13:37:11.181 INFO [main]com.kingthy.service.test.EventProcessServiceTest.logStartupProfileInfo():665 -The following profiles are active: dev
+2017-11-28 13:37:31.898 INFO [main]com.kingthy.service.test.EventProcessServiceTest.logStarted():57 -Started EventProcessServiceTest in 25.496 seconds (JVM running for 27.184)
+2017-11-28 13:39:23.263 INFO [main]com.kingthy.service.test.EventProcessServiceTest.logStartupProfileInfo():665 -The following profiles are active: dev
+2017-11-28 13:39:42.955 INFO [main]com.kingthy.service.test.EventProcessServiceTest.logStarted():57 -Started EventProcessServiceTest in 24.188 seconds (JVM running for 25.839)
+2017-11-28 13:51:33.484 INFO [main]com.kingthy.service.test.EventProcessServiceTest.logStartupProfileInfo():665 -The following profiles are active: dev
+2017-11-28 13:51:54.373 INFO [main]com.kingthy.service.test.EventProcessServiceTest.logStarted():57 -Started EventProcessServiceTest in 25.088 seconds (JVM running for 27.382)

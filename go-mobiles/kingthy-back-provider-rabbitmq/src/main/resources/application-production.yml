@@ -1,0 +1,55 @@
+server:
+  port: ${pro.server.port:7819}
+
+spring:
+  application:
+    name: ${pro.spring.application.name:provider-rabbitmq-dubbo}
+  rabbitmq:
+    host: ${pro.rabbitmq.host:192.168.1.225}
+    port: ${pro.rabbitmq.port:5672}
+    username: ${pro.rabbitmq.username:admin}
+    password: ${pro.rabbitmq.password:Jxkj2016}
+    listener:
+      default-requeue-rejected: ${pro.rabbitmq.listener.default-requeue-rejected:false}
+      max-concurrency: ${pro.rabbitmq.listener.max-concurrency:10}
+      concurrency: ${pro.rabbitmq.listener.concurrency:2}
+
+  data:
+      elasticsearch:
+        cluster-nodes: ${pro.elasticsearch.cluster.nodes:192.168.1.237:9300}
+        properties:
+
+  redis:
+         database: ${pro.spring.redis.database:1}
+         host: ${pro.spring.redis.host:192.168.1.225}
+         port: ${pro.spring.redis.port:6379}
+         password: ${pro.spring.redis.password:myredis}
+         timeout: ${pro.spring.redis.timeout:0}
+         pool:
+             max-active: ${pro.spring.redis.pool.max-active:20}
+             min-idle: ${pro.spring.redis.pool.min-idle:5}
+             max-idle: ${pro.spring.redis.pool.max-idle:10}
+             max-wait: ${pro.spring.redis.pool.max-wait:-1}
+  dubbo:
+    application.name: rabbitmq-facade-consumer
+    registry.address: ${pro.dubbo.address:zookeeper://192.168.7.185:2181}
+    protocol.name: dubbo
+    protocol.port: ${pro.dubbo.protocol.port:20900}
+    scan: com.kingthy.service.impl
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${pro.eureka.client.serviceUrl.defaultZone:http://192.168.1.225:10000/eureka/}
+#      defaultZone: http://192.168.1.225:10000/eureka/
+  instance:
+    lease-renewal-interval-in-seconds: ${pro.lease-renewal-interval-in-seconds:2}
+    lease-expiration-duration-in-seconds: ${pro.lease-expiration-duration-in-seconds:2}
+    prefer-ip-address: true
+
+#hystrix:
+#    command.default.execution.isolation.thread.timeoutInMilliseconds: 5000
+
+logging:
+  level:
+    com.kingthy.service.impl: ${pro.com.kingthy.service.impl:debug}

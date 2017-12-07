@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: ${dev.spring.application.name:dashboard}
+server:
+  port: ${dev.server.port:8030}

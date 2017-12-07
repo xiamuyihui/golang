@@ -1,0 +1,127 @@
+server:
+  port: ${dev.server.port:8989}
+#  undertow:
+#    io-threads: 32
+#    worker-threads: 2000
+#    buffer-size: 10240
+#    buffers-per-region: 10240
+#server:
+#  ssl:
+#    key-store: classpath:keystore.p12
+#    key-store-password: 123456
+#    keyStoreType: PKCS12
+#    keyAlias: tomcat
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: ${dev.spring.datasource.url:jdbc:mysql://192.168.1.191:3306/zmshop?characterEncoding=UTF-8 }
+    username: ${dev.spring.datasource.username:root}
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    hikari:
+      connection-test-query: ${dev.spring.datasource.hikari.connection-test-query:select 1 from dual}
+      connection-timeout: ${dev.spring.datasource.hikari.connection-timeout:30000}
+      idle-timeout: ${dev.spring.datasource.hikari.idle-timeout:60000}
+      max-lifetime: ${dev.spring.datasource.hikari.max-lifetime:1800000}
+      maximum-pool-size: ${dev.spring.datasource.hikari.maximum-pool-size:10}
+      minimum-idle: ${dev.spring.datasource.hikari.minimum-idle:10}
+  application:
+    name: ${dev.spring.application.name:api-gateway-kingthy-dubbo}
+  redis:
+    database: 1
+    host: 192.168.1.225
+    port: 6379
+    password: myredis
+    timeout: 0
+#自定义网关路径
+zuul:
+  ribbon:
+      eager-load:
+        enabled: true
+  #HTTPBearerAuthorizeFilter.pre.disable: true
+  #FormBodyWrapperFilter.pre.disable: true
+  ribbon-isolation-strategy: THREAD
+  host:
+      max-per-route-connections: 2000
+      max-total-connections: 2000
+      time-unit: milliseconds
+      time-to-live: 30
+      connect-timeout-millis: 50000
+      socket-timeout-millis: 50000
+  retryable: false
+  ignored-services: '*'
+  routes:
+    generate-sn:
+      path: /api-sn/**
+      serviceId: provider-generate-sn-dubbo
+    opus:
+      path: /api-opus/**
+      serviceId: provider-opus-dubbo
+    goods:
+      path: /api-goods/**
+      serviceId: provider-goods-dubbo
+    order:
+      path: /api-order/**
+      serviceId: provider-order-dubbo
+    favorite:
+      path: /api-favorite/**
+      serviceId: provider-favorite-dubbo
+    cart:
+      path: /api-cart/**
+      serviceId: provider-cart-dubbo
+    payment:
+      path: /api-payment/**
+      serviceId: provider-payment-dubbo
+    area:
+      path: /api-area/**
+      serviceId: provider-area-dubbo
+    income:
+      path: /api-income/**
+      serviceId: provider-income-dubbo
+    user:
+      path: /api-user/**
+      serviceId: provider-user-dubbo
+    user-register:
+      path: /api-regist/**
+      serviceId: provider-member-regist-dubbo
+    clothing:
+      path: /api-clothing/**
+      serviceId: provider-clothing-dubbo
+    #upload:
+      #path: /api-upload/**
+      #serviceId: upload-file-dubbo
+  semaphore:
+    max-semaphores: 100000
+
+
+eureka:
+  client:
+    serviceUrl:
+#      defaultZone: http://slave1:10000/eureka/,http://slave2:10000/eureka/,http://slave3:10000/eureka/
+      #defaultZone: http://192.168.6.220:10000/eureka/
+      defaultZone: http://192.168.6.145:10000/eureka/
+  instance:
+    lease-renewal-interval-in-seconds: 3
+    lease-expiration-duration-in-seconds: 3
+ribbon:
+  TrustStore: keystore.p12
+  TrustStorePassword: 123456
+  ReadTimeout: 60000
+  IsSecure: false
+  eager-load:
+      enabled: true
+      clients: provider-generate-sn-dubbo,provider-opus-dubbo,provider-goods-dubbo,provider-order-dubbo,provider-favorite-dubbo,provider-cart-dubbo,provider-payment-dubbo,provider-area-dubbo,provider-income-dubbo,provider-user-dubbo,provider-member-regist-dubbo,provider-clothing-dubbo
+
+hystrix:
+  #配置是否开启熔断，默认true
+  command.default.circuitBreaker.enabled: false
+  command.default.execution.isolation.thread.timeoutInMilliseconds: 50000
+  command.default.execution.isolation.strategy: THREAD
+  threadpool.default.coreSize: 2000
+  threadpool.default.maximumSize: 2000
+  threadpool.default.maxQueueSize: 2000
+  threadpool.default.queueSizeRejectionThreshold: 2000
+logging:
+  level:
+    com.kingthy.filter.HTTPBearerAuthorizeFilter: error
+    com.kingthy.util.JwtUtil: error

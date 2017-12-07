@@ -1,0 +1,27 @@
+
+
+websocket:
+   #netty配置
+   netty:
+     host:
+     port: 9090
+     # 是否集群
+     isCluster: false
+     # 心跳检测时间
+     maxHeartbeat: 3600
+
+   #zookeeper配置
+   zk:
+     watch-path: /
+     server-address: localhost:2181
+     restry:
+        maxRetries: 3
+        baseSleepTimeMs: 3600
+        maxSleepMs : 3
+   #redis配置
+   redis:
+        database: 1
+        host: 192.168.1.225
+        port: 6379
+        password: myredis
+

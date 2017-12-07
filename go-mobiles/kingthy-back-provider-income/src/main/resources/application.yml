@@ -1,0 +1,47 @@
+server.port: ${dev.server.port:7928}
+
+spring:
+  application:
+    name: ${dev.spring.application.name:provider-income-dubbo}
+  redis:
+      database: ${dev.spring.redis.database:1}
+      host: ${dev.spring.redis.host:192.168.1.225}
+      port: ${dev.spring.redis.port:6379}
+      password: ${dev.spring.redis.password:myredis}
+      timeout: ${dev.spring.redis.timeout:0}
+      pool:
+        max-active: ${dev.spring.redis.pool.max-active:20}
+        min-idle: ${dev.spring.redis.pool.min-idle:5}
+        max-idle: ${dev.spring.redis.pool.max-idle:10}
+        max-wait: ${dev.spring.redis.pool.max-wait:-1}
+
+  rabbitmq:
+    host: 192.168.6.111
+    port: 5672
+    username: kingthy
+    password: kingthy
+
+  dubbo:
+    application.name: income-facade-consumer
+    registry.address: ${dev.dubbo.address:zookeeper://192.168.7.185:2181}
+    protocol.name: dubbo
+    protocol.port: ${dev.dubbo.protocol.port:20895}
+    scan: com.kingthy.service.impl
+
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:10000/eureka/
+  instance:
+    lease-renewal-interval-in-seconds: 2
+    lease-expiration-duration-in-seconds: 2
+    prefer-ip-address: true
+logging:
+  level:
+    com.kingthy.service.impl: DEBUG
+    com.kingthy.mapper: debug
+
+hystrix:
+  command.default.execution.isolation.thread.timeoutInMilliseconds: 5000

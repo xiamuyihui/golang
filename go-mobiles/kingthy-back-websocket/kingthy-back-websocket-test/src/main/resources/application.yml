@@ -1,0 +1,12 @@
+server: 
+  port:  9092
+
+spring:
+
+  application:
+      name: websocket-test
+
+
+websocket:
+   remote-address: ws://192.168.7.193:9090/websocket
+

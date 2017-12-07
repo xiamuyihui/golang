@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    config:
+      name: job-dubbo
+#      profile: dev
+#      label: api-conf
+#      uri: http://192.168.1.237:8000
+      uri: http://conf.api.com:8000
+#      uri: http://localhost:8000
+  profiles:
+    active: dev

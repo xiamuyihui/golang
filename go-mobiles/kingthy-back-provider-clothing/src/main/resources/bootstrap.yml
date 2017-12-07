@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      name: geometry-dubbo
+      uri: http://conf.api.com:8000
+  #profiles:
+    #pactive: dev

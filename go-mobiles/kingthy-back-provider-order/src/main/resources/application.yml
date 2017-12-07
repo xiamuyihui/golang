@@ -1,0 +1,73 @@
+server.port: ${dev.server.port:7918}
+#server:
+#  ssl:
+#    key-store: classpath:keystore.p12
+#    key-store-password: 123456
+#    keyStoreType: PKCS12
+#    keyAlias: tomcat
+
+#hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 5000
+
+spring:
+  application:
+    name: ${dev.spring.application.name:provider-order-dubbo}
+  redis:
+      database: ${dev.spring.redis.database:1}
+      host: ${dev.spring.redis.host:192.168.1.225}
+      port: ${dev.spring.redis.port:6379}
+      password: ${dev.spring.redis.password:myredis}
+      timeout: ${dev.spring.redis.timeout:0}
+      pool:
+        max-active: ${dev.spring.redis.pool.max-active:20}
+        min-idle: ${dev.spring.redis.pool.min-idle:5}
+        max-idle: ${dev.spring.redis.pool.max-idle:10}
+        max-wait: ${dev.spring.redis.pool.max-wait:-1}
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: guest
+#    password: guest
+  rabbitmq:
+    host: 192.168.6.111
+    port: 5672
+#    username: admin
+#    password: Jxkj2016
+    username: kingthy
+    password: kingthy
+  dubbo:
+    application.name: order-facade-consumer
+    registry.address: ${dev.dubbo.address:zookeeper://192.168.7.185:2181}
+    protocol.name: dubbo
+    protocol.port: ${dev.dubbo.protocol.port:20898}
+    scan: com.kingthy.service.impl
+eureka:
+  client:
+    serviceUrl:
+#      defaultZone: http://192.168.1.225:10000/eureka/
+      defaultZone: http://localhost:10000/eureka/
+  instance:
+    lease-renewal-interval-in-seconds: 2
+    lease-expiration-duration-in-seconds: 2
+    prefer-ip-address: true
+logging:
+  level:
+    com.kingthy.service.impl: DEBUG
+    com.kingthy.mapper: debug
+
+hystrix:
+  #超时阀值，默认1000毫秒#
+  command.default.execution.isolation.thread.timeoutInMilliseconds: 5000
+  #熔断后，相隔多长时间，发起重试，默认5000毫秒#
+  command.default.circuitBreaker.sleepWindowInMilliseconds: 5000
+  #当在配置时间窗口内达到此数量的失败后，进行短路。默认20个#
+  command.default.circuitBreaker.requestVolumeThreshold: 20
+  #出错百分比阈值，当达到此阈值后，开始短路。默认50%#
+  command.default.circuitBreaker.errorThresholdPercentage: 50
+  #线程池核心线程数,默认10
+  threadpool.default.coreSize: 2000
+  #最大等待队列数
+  threadpool.default.maxQueueSize: 2000
+  #当实际线程数超过核心线程数时，线程存活时间，默认1分钟
+  threadpool.default.keepAliveTimeMinutes: 1
+  #允许在队列中的等待的任务数量，请求拒绝临界值，默认5
+  threadpool.default.queueSizeRejectionThreshold: 5

@@ -1,0 +1,38 @@
+server:
+  port: ${test.server.port:7171}
+
+spring:
+  application:
+    name: ${test.spring.application.name:provider-base}
+  rabbitmq:
+    host: ${test.rabbitmq.host:localhost}
+    port: ${test.rabbitmq.port:5672}
+    username: ${test.rabbitmq.username:guest}
+    password: ${test.rabbitmq.password:guest}
+
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: ${test.spring.datasource.url:jdbc:mysql://192.168.1.191:3306/zmshop?characterEncoding=UTF-8}
+    username: ${test.spring.datasource.username:root}
+    password: ${test.spring.datasource.password:root}
+    driver-class-name: com.mysql.jdbc.Driver
+    hikari:
+      connection-test-query: ${test.spring.datasource.hikari.connection-test-query:select 1 from dual}
+      connection-timeout: ${test.spring.datasource.hikari.connection-timeout:30000}
+      idle-timeout: ${test.spring.datasource.hikari.idle-timeout:60000}
+      max-lifetime: ${test.spring.datasource.hikari.max-lifetime:1800000}
+      maximum-pool-size: ${test.spring.datasource.hikari.maximum-pool-size:10}
+      minimum-idle: ${test.spring.datasource.hikari.minimum-idle:10}
+    
+eureka:
+  client:
+    serviceUrl:
+       defaultZone: ${test.eureka.client.serviceUrl.defaultZone:http://192.168.1.225:10000/eureka/}
+  instance:
+    lease-renewal-interval-in-seconds: ${test.lease-renewal-interval-in-seconds:2}
+    lease-expiration-duration-in-seconds: ${test.lease-expiration-duration-in-seconds:2}
+
+#hystrix:
+#    command.default.execution.isolation.thread.timeoutInMilliseconds: 5000
+
+

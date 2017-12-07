@@ -1,0 +1,6 @@
+com\kingthy\conf\CommandSetting.class
+com\kingthy\cache\RedisManager.class
+com\kingthy\conf\CacheSetting.class
+com\kingthy\conf\WebMvcConfig.class
+com\kingthy\conf\RabbitmqConfig.class
+com\kingthy\conf\CorsConfig.class

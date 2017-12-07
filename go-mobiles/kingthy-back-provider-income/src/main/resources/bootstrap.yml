@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    config:
+      name: income-dubbo
+      profile: dev
+      label: api-conf
+      uri: http://conf.api.com:8000
+  profiles:
+    active: dev

@@ -1,0 +1,83 @@
+server.port:  ${dev.server.port:7996}
+#server:
+#  ssl:
+#    key-store: classpath:keystore.p12
+#    key-store-password: 123456
+#    keyStoreType: PKCS12
+#    keyAlias: tomcat
+
+spring:
+  application:
+    name: ${dev.spring.application.name:provider-goods-dubbo}
+  cache:
+    jcache:
+      config: classpath:ehcache.xml
+
+
+  redis:
+    database: ${dev.redis.database:1}
+    host: ${dev.redis.host:192.168.1.225}
+    port: ${dev.redis.port:6379}
+    password: ${dev.redis.password:myredis}
+    timeout: ${dev.redis.timeout:0}
+    pool:
+      max-active: ${dev.spring.redis.pool.max-active:20}
+      min-idle: ${dev.spring.redis.pool.min-idle:5}
+      max-idle: ${dev.spring.redis.pool.max-idle:10}
+      max-wait: ${dev.spring.redis.pool.max-wait:1}
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  data:
+      elasticsearch:
+  #      cluster-nodes: 192.168.1.237:9300,192.168.7.197:9300
+        cluster-nodes: 192.168.1.237:9300
+  #      cluster-nodes: 192.168.1.237:9300
+
+  dubbo:
+    application.name: goods-facade-consumer
+#    registry.address: ${dev.dubbo.address:zookeeper://192.168.7.185:2181}
+    registry.address: zookeeper://192.168.6.145:2181
+    protocol.name: dubbo
+    protocol.port: ${dev.dubbo.protocol.port:20894}
+    scan: com.kingthy.service.impl
+
+
+eureka:
+  client:
+    serviceUrl:
+      #defaultZone: ${dev.eureka.client.serviceUrl.defaultZone:http://192.168.1.225:10000/eureka/}
+        #defaultZone: http://eureka1:10001/eureka/,http://eureka2:10000/eureka/
+      defaultZone: ${dev.eureka.client.serviceUrl.defaultZone:http://localhost:10000/eureka/}
+#      defaultZone: http://192.168.6.140:10000/eureka/
+
+  instance:
+    #心跳时间，服务续约间隔时间 （默认30秒）
+    lease-renewal-interval-in-seconds: 2
+    #发呆时间，服务续约到期时间（缺省90秒）
+    lease-expiration-duration-in-seconds: 2
+    prefer-ip-address: true
+logging:
+  level:
+    com.kingthy.service.impl: info
+    com.kingthy.repository: info
+
+  #缓存超时设置(分钟)
+cache:
+  nullValueExpire: 8
+
+hystrix:
+
+  #配置是否开启熔断，默认true
+  command.default.circuitBreaker.enabled: false
+  #超时阀值，默认1000毫秒#
+  command.default.execution.isolation.thread.timeoutInMilliseconds: 2000
+  #熔断后，相隔多长时间，发起重试，默认5000毫秒#
+  command.default.circuitBreaker.sleepWindowInMilliseconds: 5000
+  #当在配置时间窗口内达到此数量的失败后，进行短路。默认20个#
+  command.default.circuitBreaker.requestVolumeThreshold: 20
+  #出错百分比阈值，当达到此阈值后，开始短路。默认50%#
+  command.default.circuitBreaker.errorThresholdPercentage: 50

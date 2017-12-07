@@ -1,0 +1,41 @@
+server.port:   ${production.server.port:7908}
+#server:
+#  ssl:
+#    key-store: classpath:keystore.p12
+#    key-store-password: 123456
+#    keyStoreType: PKCS12
+#    keyAlias: tomcat
+spring:
+  application:
+    name: ${production.spring.application.name:provider-generate-sn-dubbo}
+
+  redis:
+    database: ${production.spring.redis.database:1}
+    host: ${production.spring.redis.host:192.168.1.225}
+    port: ${production.spring.redis.port:6379}
+    password: ${production.spring.redis.password:myredis}
+    timeout: ${production.spring.redis.timeout:0}
+    pool:
+        max-active: ${production.spring.redis.pool.max-active:20}
+        min-idle: ${production.spring.redis.pool.min-idle:5}
+        max-idle: ${production.spring.redis.pool.max-idle:10}
+        max-wait: ${production.spring.redis.pool.max-wait:-1}
+  dubbo:
+    application.name: generate-sn-facade-consumer
+    registry.address: ${production.dubbo.address:zookeeper://192.168.7.185:2181}
+    protocol.name: dubbo
+    protocol.port: ${production.dubbo.protocol.port:20898}
+    scan: com.jxkj.cloud.service
+eureka:
+  client:
+    serviceUrl: 
+      defaultZone: ${production.eureka.client.serviceUrl.defaultZone:http://192.168.1.225:10000/eureka/}
+  instance:
+    #心跳时间，服务续约间隔时间 （默认30秒）
+    lease-renewal-interval-in-seconds: 2
+    #发呆时间，服务续约到期时间（缺省90秒）
+    lease-expiration-duration-in-seconds: 2
+    prefer-ip-address: true
+logging:
+  level:
+    com.kingthy.service.impl: DEBUG  

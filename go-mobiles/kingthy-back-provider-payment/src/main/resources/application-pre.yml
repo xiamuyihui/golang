@@ -1,0 +1,51 @@
+server.port:  ${pre.server.port:7902}
+#server:
+#  ssl:
+#    key-store: classpath:keystore.p12
+#    key-store-password: 123456
+#    keyStoreType: PKCS12
+#    keyAlias: tomcat
+spring:
+
+  application:
+    name: ${pre.spring.application.name:provider-payment-dubbo}
+
+  rabbitmq:
+    host: ${pre.rabbitmq.host:192.168.1.148}
+    port: ${pre.rabbitmq.port:5672}
+    username: ${pre.rabbitmq.username:admin}
+    password: ${pre.rabbitmq.password:Jxkj2016}
+
+  redis:
+      database: ${pre.spring.redis.database:1}
+      host: ${pre.spring.redis.host:192.168.1.225}
+      port: ${pre.spring.redis.port:6379}
+      password: ${pre.spring.redis.password:myredis}
+      timeout: ${pre.spring.redis.timeout:0}
+      pool:
+          max-active: ${pre.spring.redis.pool.max-active:20}
+          min-idle: ${pre.spring.redis.pool.min-idle:5}
+          max-idle: ${pre.spring.redis.pool.max-idle:10}
+          max-wait: ${pre.spring.redis.pool.max-wait:-1}
+#      dubbo配置
+  dubbo:
+    application.name: payment-facade-consumer
+    registry.address: ${pre.dubbo.address:zookeeper://192.168.7.185:2181}
+    protocol.name:  dubbo
+    protocol.port:  ${pre.dubbo.protocol.port:20899}
+    scan: com.kingthy.service.impl
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${pre.eureka.client.serviceUrl.defaultZone:http://localhost:10000/eureka/}
+  instance:
+    #心跳时间，服务续约间隔时间 （默认30秒）
+    lease-renewal-interval-in-seconds: 2
+    #发呆时间，服务续约到期时间（缺省90秒）
+    lease-expiration-duration-in-seconds: 2
+    prefer-ip-address: true
+
+#缓存超时设置(分钟)
+cache:
+   nullValueExpire: 8

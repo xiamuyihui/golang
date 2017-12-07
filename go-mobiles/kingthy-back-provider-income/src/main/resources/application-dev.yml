@@ -1,0 +1,50 @@
+server.port:  ${dev.server.port:7928}
+#server:
+#  ssl:
+#    key-store: classpath:keystore.p12
+#    key-store-password: 123456
+#    keyStoreType: PKCS12
+#    keyAlias: tomcat
+spring:
+  application:
+    name: ${dev.spring.application.name:provider-income-dubbo}
+  redis:
+    database: ${dev.spring.redis.database:1}
+    host: ${dev.spring.redis.host:192.168.1.225}
+    port: ${dev.spring.redis.port:6379}
+    password: ${dev.spring.redis.password:myredis}
+    timeout: ${dev.spring.redis.timeout:0}
+    pool:
+      max-active: ${dev.spring.redis.pool.max-active:20}
+      min-idle: ${dev.spring.redis.pool.min-idle:5}
+      max-idle: ${dev.spring.redis.pool.max-idle:10}
+      max-wait: ${dev.spring.redis.pool.max-wait:-1}
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  dubbo:
+    application.name: income-facade-consumer
+    registry.address: ${dev.dubbo.address:zookeeper://192.168.7.185:2181}
+    protocol.name: dubbo
+    protocol.port: ${dev.dubbo.protocol.port:20895}
+    scan: com.kingthy.service.impl
+  http:
+    multipart:
+      max-file-size: 50Mb
+      max-request-size: 50Mb
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${dev.eureka.client.serviceUrl.defaultZone:http://192.168.6.111:10000/eureka/}
+  instance:
+    lease-renewal-interval-in-seconds: ${dev.lease-renewal-interval-in-seconds:2}
+    lease-expiration-duration-in-seconds: ${dev.lease-expiration-duration-in-seconds:2}
+    prefer-ip-address: true
+logging:
+  level:
+    com.kingthy.service.impl: ${dev.com.kingthy.service.impl:debug}
+    com.kingthy.mapper: ${dev.com.kingthy.mapper:debug}
+hystrix:
+      command.default.execution.isolation.thread.timeoutInMilliseconds: ${dev.command.default.execution.isolation.thread.timeoutInMilliseconds:5000}

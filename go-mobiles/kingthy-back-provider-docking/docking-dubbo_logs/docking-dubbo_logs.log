@@ -1,0 +1,9 @@
+2017-11-21 16:10:47.095 INFO [main]com.kingthy.service.test.IfoOrderTest.logStartupProfileInfo():665 -The following profiles are active: dev
+2017-11-21 16:11:12.108 INFO [main]com.kingthy.service.test.IfoOrderTest.logStartupProfileInfo():665 -The following profiles are active: dev
+2017-11-21 16:15:08.386 INFO [main]com.kingthy.service.test.IfoOrderTest.logStartupProfileInfo():665 -The following profiles are active: dev
+2017-11-21 16:15:32.494 INFO [main]com.kingthy.service.test.IfoOrderTest.logStartupProfileInfo():665 -The following profiles are active: dev
+2017-11-21 16:22:00.658 INFO [main]com.kingthy.service.test.IfoOrderTest.logStartupProfileInfo():665 -The following profiles are active: dev
+2017-11-21 16:22:24.991 INFO [main]com.kingthy.service.test.IfoOrderTest.logStartupProfileInfo():665 -The following profiles are active: dev
+2017-11-21 16:23:31.847 INFO [main]com.kingthy.service.test.IfoOrderTest.logStartupProfileInfo():665 -The following profiles are active: dev
+2017-11-21 16:23:48.280 INFO [main]com.kingthy.service.test.IfoOrderTest.logStarted():57 -Started IfoOrderTest in 20.74 seconds (JVM running for 22.346)
+2017-11-21 16:26:21.794 ERROR[main]com.kingthy.service.test.IfoOrderTest.createOrderTest():256 --------------orderItemSn------------20171121513551541

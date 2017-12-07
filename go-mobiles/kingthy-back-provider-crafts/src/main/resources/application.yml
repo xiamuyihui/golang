@@ -1,0 +1,60 @@
+server: 
+  port:  ${dev.server.port:7917}
+
+spring:
+
+  application:
+      name: ${dev.spring.application.name:provider-crafts-dubbo}
+
+  rabbitmq:
+    host: ${dev.rabbitmq.host:192.168.1.148}
+    port: ${dev.rabbitmq.port:5672}
+    username: ${dev.rabbitmq.username:admin}
+    password: ${dev.rabbitmq.password:Jxkj2016}
+
+
+  #缓存配置
+  redis:
+     database: ${dev.spring.redis.database:1}
+     host: ${dev.spring.redis.host:192.168.1.225}
+     port: ${dev.spring.redis.port:6379}
+     password: ${dev.spring.redis.password:myredis}
+     timeout: ${dev.spring.redis.timeout:0}
+     pool:
+         max-active: ${dev.spring.redis.pool.max-active:20}
+         min-idle: ${dev.spring.redis.pool.min-idle:5}
+         max-idle: ${dev.spring.redis.pool.max-idle:10}
+         max-wait: ${dev.spring.redis.pool.max-wait:-1}
+  #dubbo配置
+  dubbo:
+    application.name: crafts-facade-consumer
+    registry.address: ${dev.dubbo.address:zookeeper://192.168.7.185:2181}
+    protocol.name: dubbo
+    protocol.port: ${dev.dubbo.protocol.port:20904}
+    scan: com.kingthy.service.impl
+
+#缓存超时设置
+cache:
+  expire:
+    #分钟
+    nullValueExpire: 8
+
+
+eureka:
+  client:
+    serviceUrl:
+       #defaultZone: ${dev.eureka.client.serviceUrl.defaultZone:http://192.168.6.195:10000/eureka/}
+       defaultZone: http://localhost:10000/eureka
+  instance:
+    #心跳时间，服务续约间隔时间 （默认30秒）
+    lease-renewal-interval-in-seconds: 2
+    #发呆时间，服务续约到期时间（缺省90秒）
+    lease-expiration-duration-in-seconds: 2
+    prefer-ip-address: true
+logging:
+  level:
+    com.kingthy.service.impl: DEBUG
+    com.kingthy.mapper: DEBUG
+
+hystrix:
+  command.default.execution.isolation.thread.timeoutInMilliseconds: 5000

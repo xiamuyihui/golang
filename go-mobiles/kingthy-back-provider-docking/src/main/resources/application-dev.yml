@@ -1,0 +1,85 @@
+server:
+  port: ${dev.server.port:7858}
+
+regCenter:
+#  serverList: localhost:2181
+#  serverList: 192.168.6.145:2181
+  serverList: 192.168.7.185:2181
+  namespace: job-lite
+#  namespace: job-lite-docking
+
+colourIfiJob:
+#  cron: 0/30 * * * * ?
+  cron: 0 0 23 * * ?
+  shardingTotalCount: 3
+  shardingItemParameters: 0=0,1=4,2=8
+
+styleTypeIfiJob:
+  cron: 0 0 23 * * ?
+  shardingTotalCount: 3
+  shardingItemParameters: 0=0,1=4,2=8
+
+componentTypeIfiJob:
+  cron: 0 0 23 * * ?
+  shardingTotalCount: 3
+  shardingItemParameters: 0=0,1=4,2=8
+
+partsTypeIfiJob:
+  cron: 0 0 23 * * ?
+  shardingTotalCount: 3
+  shardingItemParameters: 0=0,1=4,2=8
+
+ifiMaterialTypeJob:
+#  cron: 0/10 * * * * ?
+  cron: 0 0 23 * * ?
+  shardingTotalCount: 3
+  shardingItemParameters: 0=0,1=4,2=8
+
+ifiMeasureUnitJob:
+#  cron: 0/10 * * * * ?
+  cron: 0 0 23 * * ?
+  shardingTotalCount: 3
+  shardingItemParameters: 0=0,1=4,2=8
+
+spring:
+  application:
+    name: ${dev.spring.application.name:provider-docking-dubbo}
+  dubbo:
+    application.name: docking-job-facade-consumer
+#    registry.address: ${dev.dubbo.address:zookeeper://192.168.7.185:2181}
+    registry.address: zookeeper://192.168.7.185:2181
+    protocol.name: dubbo
+    protocol.port: ${dev.dubbo.protocol.port:20996}
+    scan: com.kingthy.service.impl,com.kingthy.job
+
+  redis:
+    database: ${dev.redis.database:1}
+    host: ${dev.redis.host:192.168.1.225}
+    port: ${dev.redis.port:6379}
+    password: ${dev.redis.password:myredis}
+    timeout: ${dev.redis.timeout:0}
+    pool:
+      max-active: ${dev.spring.redis.pool.max-active:20}
+      min-idle: ${dev.spring.redis.pool.min-idle:5}
+      max-idle: ${dev.spring.redis.pool.max-idle:10}
+      max-wait: ${dev.spring.redis.pool.max-wait:-1}
+
+
+eureka:
+  client:
+    serviceUrl:
+      #defaultZone: ${dev.eureka.client.serviceUrl.defaultZone:http://192.168.1.225:10000/eureka/}
+        #defaultZone: http://eureka1:10001/eureka/,http://eureka2:10000/eureka/
+#      defaultZone: ${dev.eureka.client.serviceUrl.defaultZone:http://localhost:10000/eureka/}
+      defaultZone: http://localhost:10000/eureka/
+
+  instance:
+    #心跳时间，服务续约间隔时间 （默认30秒）
+    lease-renewal-interval-in-seconds: 2
+    #发呆时间，服务续约到期时间（缺省90秒）
+    lease-expiration-duration-in-seconds: 2
+    prefer-ip-address: true
+
+logging:
+  level:
+    com.kingthy.service.impl: ${dev.com.kingthy.service.impl:info}

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.kingthy</groupId>
+    <artifactId>kingthy-back-websocket-client</artifactId>
+    <version>0.0.2-SNAPSHOT</version>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.4.1.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+   <dependencies>
+
+       <dependency>
+           <groupId>org.springframework.boot</groupId>
+           <artifactId>spring-boot-starter</artifactId>
+       </dependency>
+
+       <dependency>
+           <groupId>com.kingthy</groupId>
+           <artifactId>kingthy-back-common</artifactId>
+           <version>0.0.2-SNAPSHOT</version>
+       </dependency>
+
+       <!--netty核心包-->
+       <dependency>
+           <groupId>io.netty</groupId>
+           <artifactId>netty-all</artifactId>
+           <version>4.1.16.Final</version>
+       </dependency>
+
+       <dependency>
+           <groupId>com.kingthy</groupId>
+           <artifactId>kingthy-back-websocket-pojo</artifactId>
+           <version>0.0.2-SNAPSHOT</version>
+       </dependency>
+
+       <dependency>
+           <groupId>com.kingthy</groupId>
+           <artifactId>kingthy-back-websocket-zk</artifactId>
+           <version>0.0.2-SNAPSHOT</version>
+       </dependency>
+
+   </dependencies>
+    <!-- 构件部署仓库 -->
+    <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <name>releases</name>
+            <url>http://192.168.1.224:8081/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>snapshots</name>
+            <url>http://192.168.1.224:8081/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+</project>

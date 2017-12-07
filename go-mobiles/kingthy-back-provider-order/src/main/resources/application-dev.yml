@@ -1,0 +1,100 @@
+#server.port:  ${dev.server.port:7918}
+#server:
+#  ssl:
+#    key-store: classpath:keystore.p12
+#    key-store-password: 123456
+#    keyStoreType: PKCS12
+#    keyAlias: tomcat
+spring:
+#  cloud:
+#      stream:
+#        bindings:
+#          output:        #position1。channelName.
+#            destination: mydest #position2。destination，或者可以认为是发布－订阅模型里面的topic，这里应该与输出app中发布的topic一致，表示订阅该主题
+#            group: s3
+#            binder: rabbit
+#            contentType: application/json
+#        binders:
+#          rabbit:
+#            type: rabbit     #可以是其它，比如kafka
+#            environment:
+#              spring:
+#                rabbitmq:
+#                  host: 192.168.6.111   #rabbitMQ服务器地址
+#                  port: 5672          #rabbitMQ服务器端口
+#                  username: kingthy
+#                  password: kingthy
+  application:
+    name: ${dev.spring.application.name:provider-order-dubbo}
+  redis:
+        database: ${dev.spring.redis.database:1}
+        host: ${dev.spring.redis.host:192.168.1.225}
+#        host: localhost
+#        password:
+        port: ${dev.spring.redis.port:6379}
+        password: ${dev.spring.redis.password:myredis}
+        timeout: ${dev.spring.redis.timeout:0}
+        pool:
+          max-active: ${dev.spring.redis.pool.max-active:20}
+          min-idle: ${dev.spring.redis.pool.min-idle:5}
+          max-idle: ${dev.spring.redis.pool.max-idle:10}
+          max-wait: ${dev.spring.redis.pool.max-wait:-1}
+#  rabbitmq:
+#    host: ${dev.rabbitmq.host:192.168.6.111}
+#    port: ${dev.rabbitmq.port:5672}
+#    username: ${dev.rabbitmq.username:admin}
+#    password: ${dev.rabbitmq.password:Jxkj2016}
+#  rabbitmq:
+#    host: 192.168.6.111
+#    port: 5672
+##    username: kingthy
+##    password: kingthy
+#    username: kingthy
+#    password: kingthy
+##
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  dubbo:
+    application.name: order-facade-consumer
+#    registry.address: ${dev.dubbo.address:zookeeper://192.168.7.185:2181}
+    registry.address: zookeeper://localhost:2181
+    protocol.name: dubbo
+    protocol.port: ${dev.dubbo.protocol.port:20898}
+    scan: com.kingthy.service.impl
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${dev.eureka.client.serviceUrl.defaultZone:http://localhost:10000/eureka/}
+  instance:
+    lease-renewal-interval-in-seconds: ${dev.lease-renewal-interval-in-seconds:2}
+    lease-expiration-duration-in-seconds: ${dev.lease-expiration-duration-in-seconds:2}
+    prefer-ip-address: true
+logging:
+  level:
+    com.kingthy.service.impl: ${dev.com.kingthy.service.impl:debug}
+    com.kingthy.mapper: ${dev.com.kingthy.mapper:debug}
+hystrix:
+  #超时阀值，默认1000毫秒#
+  command.default.execution.isolation.thread.timeoutInMilliseconds: 5000
+  #熔断后，相隔多长时间，发起重试，默认5000毫秒#
+  command.default.circuitBreaker.sleepWindowInMilliseconds: 5000
+  #当在配置时间窗口内达到此数量的失败后，进行短路。默认20个#
+  command.default.circuitBreaker.requestVolumeThreshold: 20
+  #出错百分比阈值，当达到此阈值后，开始短路。默认50%#
+  command.default.circuitBreaker.errorThresholdPercentage: 50
+  #线程池核心线程数,默认10
+  threadpool.default.coreSize: 2000
+  #最大等待队列数
+  threadpool.default.maxQueueSize: 2000
+  #当实际线程数超过核心线程数时，线程存活时间，默认1分钟
+  threadpool.default.keepAliveTimeMinutes: 1
+  #允许在队列中的等待的任务数量，请求拒绝临界值，默认5
+  threadpool.default.queueSizeRejectionThreshold: 5
+
+  #缓存超时设置(分钟)
+cache:
+  nullValueExpire: 8

@@ -1,0 +1,27 @@
+server:
+  port: 8371
+
+spring:
+
+  application:
+    name: provider-renderer
+   
+   
+   
+    
+  redis: 
+     database: ${dev.spring.redis.database:1}
+     host: ${dev.spring.redis.host:192.168.1.225}
+     port: ${dev.spring.redis.port:6379}
+     password: ${dev.spring.redis.password:myredis}
+     timeout: ${dev.spring.redis.timeout:0}
+     pool:
+         max-active: ${dev.spring.redis.pool.max-active:20}
+         min-idle: ${dev.spring.redis.pool.min-idle:5}
+         max-idle: ${dev.spring.redis.pool.max-idle:10}
+         max-wait: ${dev.spring.redis.pool.max-wait:-1}
+
+
+logging:
+  level:
+    com.kingthy.service.impl: DEBUG

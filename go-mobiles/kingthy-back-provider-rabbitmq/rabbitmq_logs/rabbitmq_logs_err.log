@@ -1,0 +1,84 @@
+2017-11-28 13:34:31.328 ERROR [main] o.s.d.e.r.support.AbstractElasticsearchRepository.<init>():75 - failed to load elasticsearch nodes : org.elasticsearch.client.transport.NoNodeAvailableException: None of the configured nodes are available: [{#transport#-1}{192.168.1.237}{192.168.1.237:9300}]
+2017-11-28 13:34:42.511 ERROR [SimpleAsyncTaskExecutor-2] com.kingthy.mq.OrderEventListener.receiveMessage():35 - [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.512 ERROR [SimpleAsyncTaskExecutor-2] com.kingthy.mq.OrderEventListener.receiveMessage():40 - 购物车接收消息, 新增待处理事件失败org.springframework.amqp.AmqpRejectAndDontRequeueException: [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.513 ERROR [SimpleAsyncTaskExecutor-1] com.kingthy.mq.OrderEventListener.receiveMessage():35 - [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.513 ERROR [SimpleAsyncTaskExecutor-1] com.kingthy.mq.OrderEventListener.receiveMessage():40 - 购物车接收消息, 新增待处理事件失败org.springframework.amqp.AmqpRejectAndDontRequeueException: [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.528 ERROR [SimpleAsyncTaskExecutor-2] com.kingthy.mq.OrderEventListener.receiveMessage():35 - [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.528 ERROR [SimpleAsyncTaskExecutor-2] com.kingthy.mq.OrderEventListener.receiveMessage():40 - 购物车接收消息, 新增待处理事件失败org.springframework.amqp.AmqpRejectAndDontRequeueException: [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.530 ERROR [SimpleAsyncTaskExecutor-1] com.kingthy.mq.OrderEventListener.receiveMessage():35 - [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.530 ERROR [SimpleAsyncTaskExecutor-1] com.kingthy.mq.OrderEventListener.receiveMessage():40 - 购物车接收消息, 新增待处理事件失败org.springframework.amqp.AmqpRejectAndDontRequeueException: [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.565 ERROR [SimpleAsyncTaskExecutor-2] com.kingthy.mq.OrderEventListener.receiveMessage():35 - [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.565 ERROR [SimpleAsyncTaskExecutor-2] com.kingthy.mq.OrderEventListener.receiveMessage():40 - 购物车接收消息, 新增待处理事件失败org.springframework.amqp.AmqpRejectAndDontRequeueException: [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.584 ERROR [SimpleAsyncTaskExecutor-1] com.kingthy.mq.OrderEventListener.receiveMessage():35 - [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.588 ERROR [SimpleAsyncTaskExecutor-1] com.kingthy.mq.OrderEventListener.receiveMessage():40 - 购物车接收消息, 新增待处理事件失败org.springframework.amqp.AmqpRejectAndDontRequeueException: [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.597 ERROR [SimpleAsyncTaskExecutor-2] com.kingthy.mq.OrderEventListener.receiveMessage():35 - [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.624 ERROR [SimpleAsyncTaskExecutor-2] com.kingthy.mq.OrderEventListener.receiveMessage():40 - 购物车接收消息, 新增待处理事件失败org.springframework.amqp.AmqpRejectAndDontRequeueException: [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.605 ERROR [SimpleAsyncTaskExecutor-1] com.kingthy.mq.OrderEventListener.receiveMessage():35 - [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.626 ERROR [SimpleAsyncTaskExecutor-1] com.kingthy.mq.OrderEventListener.receiveMessage():40 - 购物车接收消息, 新增待处理事件失败org.springframework.amqp.AmqpRejectAndDontRequeueException: [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.644 ERROR [SimpleAsyncTaskExecutor-2] com.kingthy.mq.OrderEventListener.receiveMessage():35 - [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.645 ERROR [SimpleAsyncTaskExecutor-2] com.kingthy.mq.OrderEventListener.receiveMessage():40 - 购物车接收消息, 新增待处理事件失败org.springframework.amqp.AmqpRejectAndDontRequeueException: [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.650 ERROR [SimpleAsyncTaskExecutor-1] com.kingthy.mq.OrderEventListener.receiveMessage():35 - [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.651 ERROR [SimpleAsyncTaskExecutor-1] com.kingthy.mq.OrderEventListener.receiveMessage():40 - 购物车接收消息, 新增待处理事件失败org.springframework.amqp.AmqpRejectAndDontRequeueException: [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.659 ERROR [SimpleAsyncTaskExecutor-2] com.kingthy.mq.OrderEventListener.receiveMessage():35 - [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.659 ERROR [SimpleAsyncTaskExecutor-2] com.kingthy.mq.OrderEventListener.receiveMessage():40 - 购物车接收消息, 新增待处理事件失败org.springframework.amqp.AmqpRejectAndDontRequeueException: [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.660 ERROR [SimpleAsyncTaskExecutor-1] com.kingthy.mq.OrderEventListener.receiveMessage():35 - [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.661 ERROR [SimpleAsyncTaskExecutor-1] com.kingthy.mq.OrderEventListener.receiveMessage():40 - 购物车接收消息, 新增待处理事件失败org.springframework.amqp.AmqpRejectAndDontRequeueException: [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.666 ERROR [SimpleAsyncTaskExecutor-2] com.kingthy.mq.OrderEventListener.receiveMessage():35 - [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.666 ERROR [SimpleAsyncTaskExecutor-2] com.kingthy.mq.OrderEventListener.receiveMessage():40 - 购物车接收消息, 新增待处理事件失败org.springframework.amqp.AmqpRejectAndDontRequeueException: [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.668 ERROR [SimpleAsyncTaskExecutor-1] com.kingthy.mq.OrderEventListener.receiveMessage():35 - [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.669 ERROR [SimpleAsyncTaskExecutor-1] com.kingthy.mq.OrderEventListener.receiveMessage():40 - 购物车接收消息, 新增待处理事件失败org.springframework.amqp.AmqpRejectAndDontRequeueException: [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.672 ERROR [SimpleAsyncTaskExecutor-2] com.kingthy.mq.OrderEventListener.receiveMessage():35 - [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.674 ERROR [SimpleAsyncTaskExecutor-2] com.kingthy.mq.OrderEventListener.receiveMessage():40 - 购物车接收消息, 新增待处理事件失败org.springframework.amqp.AmqpRejectAndDontRequeueException: [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.678 ERROR [SimpleAsyncTaskExecutor-1] com.kingthy.mq.OrderEventListener.receiveMessage():35 - [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.678 ERROR [SimpleAsyncTaskExecutor-1] com.kingthy.mq.OrderEventListener.receiveMessage():40 - 购物车接收消息, 新增待处理事件失败org.springframework.amqp.AmqpRejectAndDontRequeueException: [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.681 ERROR [SimpleAsyncTaskExecutor-2] com.kingthy.mq.OrderEventListener.receiveMessage():35 - [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.681 ERROR [SimpleAsyncTaskExecutor-2] com.kingthy.mq.OrderEventListener.receiveMessage():40 - 购物车接收消息, 新增待处理事件失败org.springframework.amqp.AmqpRejectAndDontRequeueException: [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.713 ERROR [SimpleAsyncTaskExecutor-1] com.kingthy.mq.OrderEventListener.receiveMessage():35 - [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.713 ERROR [SimpleAsyncTaskExecutor-1] com.kingthy.mq.OrderEventListener.receiveMessage():40 - 购物车接收消息, 新增待处理事件失败org.springframework.amqp.AmqpRejectAndDontRequeueException: [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.715 ERROR [SimpleAsyncTaskExecutor-2] com.kingthy.mq.OrderEventListener.receiveMessage():35 - [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.715 ERROR [SimpleAsyncTaskExecutor-2] com.kingthy.mq.OrderEventListener.receiveMessage():40 - 购物车接收消息, 新增待处理事件失败org.springframework.amqp.AmqpRejectAndDontRequeueException: [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.721 ERROR [SimpleAsyncTaskExecutor-1] com.kingthy.mq.OrderEventListener.receiveMessage():35 - [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.721 ERROR [SimpleAsyncTaskExecutor-1] com.kingthy.mq.OrderEventListener.receiveMessage():40 - 购物车接收消息, 新增待处理事件失败org.springframework.amqp.AmqpRejectAndDontRequeueException: [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.726 ERROR [SimpleAsyncTaskExecutor-2] com.kingthy.mq.OrderEventListener.receiveMessage():35 - [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.726 ERROR [SimpleAsyncTaskExecutor-2] com.kingthy.mq.OrderEventListener.receiveMessage():40 - 购物车接收消息, 新增待处理事件失败org.springframework.amqp.AmqpRejectAndDontRequeueException: [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.729 ERROR [SimpleAsyncTaskExecutor-1] com.kingthy.mq.OrderEventListener.receiveMessage():35 - [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.731 ERROR [SimpleAsyncTaskExecutor-1] com.kingthy.mq.OrderEventListener.receiveMessage():40 - 购物车接收消息, 新增待处理事件失败org.springframework.amqp.AmqpRejectAndDontRequeueException: [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.738 ERROR [SimpleAsyncTaskExecutor-1] com.kingthy.mq.OrderEventListener.receiveMessage():35 - [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.738 ERROR [SimpleAsyncTaskExecutor-2] com.kingthy.mq.OrderEventListener.receiveMessage():35 - [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.738 ERROR [SimpleAsyncTaskExecutor-1] com.kingthy.mq.OrderEventListener.receiveMessage():40 - 购物车接收消息, 新增待处理事件失败org.springframework.amqp.AmqpRejectAndDontRequeueException: [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.738 ERROR [SimpleAsyncTaskExecutor-2] com.kingthy.mq.OrderEventListener.receiveMessage():40 - 购物车接收消息, 新增待处理事件失败org.springframework.amqp.AmqpRejectAndDontRequeueException: [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.755 ERROR [SimpleAsyncTaskExecutor-2] com.kingthy.mq.OrderEventListener.receiveMessage():35 - [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.755 ERROR [SimpleAsyncTaskExecutor-2] com.kingthy.mq.OrderEventListener.receiveMessage():40 - 购物车接收消息, 新增待处理事件失败org.springframework.amqp.AmqpRejectAndDontRequeueException: [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.757 ERROR [SimpleAsyncTaskExecutor-1] com.kingthy.mq.OrderEventListener.receiveMessage():35 - [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.757 ERROR [SimpleAsyncTaskExecutor-1] com.kingthy.mq.OrderEventListener.receiveMessage():40 - 购物车接收消息, 新增待处理事件失败org.springframework.amqp.AmqpRejectAndDontRequeueException: [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.765 ERROR [SimpleAsyncTaskExecutor-2] com.kingthy.mq.OrderEventListener.receiveMessage():35 - [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.766 ERROR [SimpleAsyncTaskExecutor-2] com.kingthy.mq.OrderEventListener.receiveMessage():40 - 购物车接收消息, 新增待处理事件失败org.springframework.amqp.AmqpRejectAndDontRequeueException: [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.771 ERROR [SimpleAsyncTaskExecutor-1] com.kingthy.mq.OrderEventListener.receiveMessage():35 - [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.772 ERROR [SimpleAsyncTaskExecutor-1] com.kingthy.mq.OrderEventListener.receiveMessage():40 - 购物车接收消息, 新增待处理事件失败org.springframework.amqp.AmqpRejectAndDontRequeueException: [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.772 ERROR [SimpleAsyncTaskExecutor-2] com.kingthy.mq.OrderEventListener.receiveMessage():35 - [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.773 ERROR [SimpleAsyncTaskExecutor-2] com.kingthy.mq.OrderEventListener.receiveMessage():40 - 购物车接收消息, 新增待处理事件失败org.springframework.amqp.AmqpRejectAndDontRequeueException: [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.780 ERROR [SimpleAsyncTaskExecutor-1] com.kingthy.mq.OrderEventListener.receiveMessage():35 - [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.780 ERROR [SimpleAsyncTaskExecutor-1] com.kingthy.mq.OrderEventListener.receiveMessage():40 - 购物车接收消息, 新增待处理事件失败org.springframework.amqp.AmqpRejectAndDontRequeueException: [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.789 ERROR [SimpleAsyncTaskExecutor-2] com.kingthy.mq.OrderEventListener.receiveMessage():35 - [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.789 ERROR [SimpleAsyncTaskExecutor-1] com.kingthy.mq.OrderEventListener.receiveMessage():35 - [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.789 ERROR [SimpleAsyncTaskExecutor-2] com.kingthy.mq.OrderEventListener.receiveMessage():40 - 购物车接收消息, 新增待处理事件失败org.springframework.amqp.AmqpRejectAndDontRequeueException: [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.789 ERROR [SimpleAsyncTaskExecutor-1] com.kingthy.mq.OrderEventListener.receiveMessage():40 - 购物车接收消息, 新增待处理事件失败org.springframework.amqp.AmqpRejectAndDontRequeueException: [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.802 ERROR [SimpleAsyncTaskExecutor-2] com.kingthy.mq.OrderEventListener.receiveMessage():35 - [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.802 ERROR [SimpleAsyncTaskExecutor-2] com.kingthy.mq.OrderEventListener.receiveMessage():40 - 购物车接收消息, 新增待处理事件失败org.springframework.amqp.AmqpRejectAndDontRequeueException: [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.804 ERROR [SimpleAsyncTaskExecutor-1] com.kingthy.mq.OrderEventListener.receiveMessage():35 - [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.804 ERROR [SimpleAsyncTaskExecutor-1] com.kingthy.mq.OrderEventListener.receiveMessage():40 - 购物车接收消息, 新增待处理事件失败org.springframework.amqp.AmqpRejectAndDontRequeueException: [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.812 ERROR [SimpleAsyncTaskExecutor-2] com.kingthy.mq.OrderEventListener.receiveMessage():35 - [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.812 ERROR [SimpleAsyncTaskExecutor-2] com.kingthy.mq.OrderEventListener.receiveMessage():40 - 购物车接收消息, 新增待处理事件失败org.springframework.amqp.AmqpRejectAndDontRequeueException: [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.814 ERROR [SimpleAsyncTaskExecutor-1] com.kingthy.mq.OrderEventListener.receiveMessage():35 - [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.815 ERROR [SimpleAsyncTaskExecutor-1] com.kingthy.mq.OrderEventListener.receiveMessage():40 - 购物车接收消息, 新增待处理事件失败org.springframework.amqp.AmqpRejectAndDontRequeueException: [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.818 ERROR [SimpleAsyncTaskExecutor-2] com.kingthy.mq.OrderEventListener.receiveMessage():35 - [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.819 ERROR [SimpleAsyncTaskExecutor-2] com.kingthy.mq.OrderEventListener.receiveMessage():40 - 购物车接收消息, 新增待处理事件失败org.springframework.amqp.AmqpRejectAndDontRequeueException: [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.824 ERROR [SimpleAsyncTaskExecutor-1] com.kingthy.mq.OrderEventListener.receiveMessage():35 - [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.825 ERROR [SimpleAsyncTaskExecutor-1] com.kingthy.mq.OrderEventListener.receiveMessage():40 - 购物车接收消息, 新增待处理事件失败org.springframework.amqp.AmqpRejectAndDontRequeueException: [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.827 ERROR [SimpleAsyncTaskExecutor-2] com.kingthy.mq.OrderEventListener.receiveMessage():35 - [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.827 ERROR [SimpleAsyncTaskExecutor-2] com.kingthy.mq.OrderEventListener.receiveMessage():40 - 购物车接收消息, 新增待处理事件失败org.springframework.amqp.AmqpRejectAndDontRequeueException: [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.846 ERROR [SimpleAsyncTaskExecutor-1] com.kingthy.mq.OrderEventListener.receiveMessage():35 - [购物车]-新增待处理事件失败
+2017-11-28 13:34:42.846 ERROR [SimpleAsyncTaskExecutor-1] com.kingthy.mq.OrderEventListener.receiveMessage():40 - 购物车接收消息, 新增待处理事件失败org.springframework.amqp.AmqpRejectAndDontRequeueException: [购物车]-新增待处理事件失败
+2017-11-28 13:37:20.867 ERROR [main] o.s.d.e.r.support.AbstractElasticsearchRepository.<init>():75 - failed to load elasticsearch nodes : org.elasticsearch.client.transport.NoNodeAvailableException: None of the configured nodes are available: [{#transport#-1}{192.168.1.237}{192.168.1.237:9300}]
+2017-11-28 13:39:32.331 ERROR [main] o.s.d.e.r.support.AbstractElasticsearchRepository.<init>():75 - failed to load elasticsearch nodes : org.elasticsearch.client.transport.NoNodeAvailableException: None of the configured nodes are available: [{#transport#-1}{192.168.1.237}{192.168.1.237:9300}]
+2017-11-28 13:51:43.367 ERROR [main] o.s.d.e.r.support.AbstractElasticsearchRepository.<init>():75 - failed to load elasticsearch nodes : org.elasticsearch.client.transport.NoNodeAvailableException: None of the configured nodes are available: [{#transport#-1}{192.168.1.237}{192.168.1.237:9300}]

@@ -1,0 +1,77 @@
+server:
+  port: ${test.server.port:7858}
+
+regCenter:
+#  serverList: localhost:2181
+#  serverList: 192.168.6.140:2181
+  serverList: 192.168.7.185:2181
+  namespace: job-lite
+#  namespace: job-lite-docking
+
+colourIfiJob:
+#  cron: 0/30 * * * * ?
+  cron: 0 0 23 * * ?
+  shardingTotalCount: 3
+  shardingItemParameters: 0=0,1=4,2=8
+
+styleTypeIfiJob:
+  cron: 0 0 23 * * ?
+  shardingTotalCount: 3
+  shardingItemParameters: 0=0,1=4,2=8
+
+componentTypeIfiJob:
+  cron: 0 0 23 * * ?
+  shardingTotalCount: 3
+  shardingItemParameters: 0=0,1=4,2=8
+
+partsTypeIfiJob:
+  cron: 0 0 23 * * ?
+  shardingTotalCount: 3
+  shardingItemParameters: 0=0,1=4,2=8
+
+ifiMaterialTypeJob:
+  cron: 0/30 * * * * ?
+  shardingTotalCount: 3
+  shardingItemParameters: 0=0,1=4,2=8
+
+ifiMeasureUnitJob:
+  cron: 0/30 * * * * ?
+  shardingTotalCount: 3
+  shardingItemParameters: 0=0,1=4,2=8
+
+spring:
+  application:
+    name: ${test.spring.application.name:provider-docking-dubbo}
+  dubbo:
+    application.name: docking-job-facade-consumer
+    registry.address: ${test.dubbo.address:zookeeper://192.168.7.185:2181}
+    protocol.name: dubbo
+    protocol.port: ${test.dubbo.protocol.port:20996}
+    scan: com.kingthy.service.impl,com.kingthy.job
+
+  redis:
+    database: ${test.redis.database:1}
+    host: ${test.redis.host:192.168.1.225}
+    port: ${test.redis.port:6379}
+    password: ${test.redis.password:myredis}
+    timeout: ${test.redis.timeout:0}
+    pool:
+      max-active: ${test.spring.redis.pool.max-active:20}
+      min-idle: ${test.spring.redis.pool.min-idle:5}
+      max-idle: ${test.spring.redis.pool.max-idle:10}
+      max-wait: ${test.spring.redis.pool.max-wait:-1}
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${test.eureka.client.serviceUrl.defaultZone:http://slave1:10000/eureka/,http://slave2:10000/eureka/,http://slave3:10000/eureka/}
+  instance:
+    #心跳时间，服务续约间隔时间 （默认30秒）
+    lease-renewal-interval-in-seconds: 2
+    #发呆时间，服务续约到期时间（缺省90秒）
+    lease-expiration-duration-in-seconds: 2
+    prefer-ip-address: true
+
+logging:
+  level:
+    com.kingthy.service.impl: ${test.com.kingthy.service.impl:info}
