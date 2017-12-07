@@ -1,0 +1,119 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.kingthy</groupId>
+    <artifactId>kingthy-back-mobiles</artifactId>
+    <version>0.0.2-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>kingthy-back-mobiles</name>
+    <description>kingthy-back-mobiles</description>
+    <!-- Modules begin -->
+
+    <!-- Modules end -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.4.1.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Brixton.SR5</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+    <modules>
+        <!--服务注册中心-->
+        <module>kingthy-back-register-center</module>
+        <module>kingthy-back-register-center-ha</module>
+
+        <!-- API网关 -->
+        <module>kingthy-back-api-gateway</module>
+        <!-- 配置中心 -->
+        <module>kingthy-back-config-server</module>
+        <!-- 看板 -->
+        <module>kingthy-back-dashboard</module>
+        <!-- 汇聚 -->
+        <module>kingthy-back-aggregator</module>
+
+        <!--消费者-->
+        <module>kingthy-back-consumer-model</module>
+        <!-- 服务提供者 -->
+        <module>kingthy-back-provider-area</module>
+        <module>kingthy-back-provider-favorite</module>
+        <module>kingthy-back-provider-user-register</module>
+        <module>kingthy-back-provider-generate-sn</module>
+        <module>kingthy-back-provider-order</module>
+        <module>kingthy-back-provider-cart</module>
+        <module>kingthy-back-provider-user</module>
+        <module>kingthy-back-provider-payment</module>
+        <module>kingthy-back-provider-goods</module>
+        <module>kingthy-back-provider-opus</module>
+        <module>kingthy-back-provider-rabbitmq</module>
+        <module>kingthy-back-provider-job</module>
+        <module>kingthy-back-provider-tupu</module>
+        <module>kingthy-back-provider-income</module>
+        <module>kingthy-back-provider-docking</module>
+        <module>kingthy-back-provider-model</module>
+        <!-- 通用模块 -->
+        <module>kingthy-back-common</module>
+        <module>kingthy-back-common-upload</module>
+        <module>kingthy-back-common-fdfs</module>
+
+        <!-- 模块化的JavaBean对象 -->
+        <module>kingthy-back-user-pojo</module>
+        <module>kingthy-back-order-pojo</module>
+        <module>kingthy-back-rabbitmq-pojo</module>
+        <module>kingthy-back-provider-message</module>
+
+        <module>kingthy-back-provider-crafts</module>
+        <module>kingthy-back-provider-clothing</module>
+        <module>kingthy-back-provider-erp</module>
+        <!--netty-->
+        <module>kingthy-back-websocket</module>
+
+
+    </modules>
+    <repositories>
+        <repository>
+            <id>alimaven</id>
+            <name>aliyun maven</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+        </repository>
+    </repositories>
+
+    <!-- 构件部署仓库 -->
+    <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <name>releases</name>
+            <url>http://192.168.1.224:8081/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>snapshots</name>
+            <url>http://192.168.1.224:8081/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+</project>
